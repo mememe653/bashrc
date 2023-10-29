@@ -121,7 +121,7 @@ fi
 # https://unix.stackexchange.com/questions/129143/what-is-the-purpose-of-bashrc-and-how-does-it-work
 # https://coderwall.com/p/fasnya/add-git-branch-name-to-bash-prompt
 git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'; }
-HOST='\e[1;32m\u@\H\e[0m: '
-LOCATION='\e[1;36m\W\e[0m'
-BRANCH='\e[1;33m$(git_branch)\e[0m \$ '
+HOST='\[\e[1;32m\]\u@\H\[\e[0m\]: '
+LOCATION='\[\e[1;36m\]\W\[\e[0m\]'
+BRANCH='\[\e[1;33m\]$(git_branch)\[\e[0m\] \$ '
 PS1=$HOST$LOCATION$BRANCH
